@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { calculateTermDeposit } from "../../helperFunctions";
+import { calculateTermDeposit, getMonths, getYears } from "../../helperFunctions";
 import Label from "../Label/Label";
 
 const TermDeposit = () => {
@@ -27,11 +27,11 @@ const TermDeposit = () => {
     }));
   };
 
-  const sliderFunction = (e) => {
+  const investmentTermChangeHandler = (e) => {
     setTotalMonths(+e.target.value);
-    let temp = +e.target.value;
-    let years = Math.floor(temp / 12);
-    let months = Math.round(temp % 12);
+
+    const years = getYears(+e.target.value);
+    const months = getMonths(+e.target.value);
 
     setInputValues((prevState) => ({
       ...prevState,
@@ -99,7 +99,7 @@ const TermDeposit = () => {
           min="3"
           max="60"
           defaultValue="0"
-          onChange={sliderFunction}
+          onChange={investmentTermChangeHandler}
         />
       </p>
       <p>
