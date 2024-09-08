@@ -122,10 +122,12 @@ const TermDeposit = () => {
         />
       </div>
 
-      <p className="finalStatement">
-        The final balance is $
-        <span className="finalBalance">{finalBalance}</span>
-      </p>
+      {finalBalance === 0 ? null : (
+        <p className="finalStatement">
+          The final balance is $
+          <span className="finalBalance">{finalBalance}</span>
+        </p>
+      )}
     </form>
   );
 };
