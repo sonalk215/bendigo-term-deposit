@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { calculateTermDeposit } from "../../helperFunctions";
+import Label from "../Label/Label";
 
 const TermDeposit = () => {
   const initialState = {
@@ -51,9 +52,11 @@ const TermDeposit = () => {
   return (
     <form className="termDepositForm" onSubmit={showFinalAmountHandler}>
       <p>
-        <label className="labelText" htmlFor="startDepositAmount">
-          Start deposit Amount
-        </label>
+        <Label
+          classes="labelText"
+          labelFor="startDepositAmount"
+          labelText="Start deposit Amount"
+        />
         <span className="userValue">{inputValues.startDepositAmount}</span>
         <input
           className="rangeInput"
@@ -66,9 +69,11 @@ const TermDeposit = () => {
         />
       </p>
       <p>
-        <label className="labelText" htmlFor="interestRate">
-          Interest Rate
-        </label>
+        <Label
+          classes="labelText"
+          labelFor="interestRate"
+          labelText="Interest Rate"
+        />
         <span className="userValue"></span>
         <input
           className="enterValueField"
@@ -81,9 +86,11 @@ const TermDeposit = () => {
         />
       </p>
       <p>
-        <label className="labelText" htmlFor="investmentTerm">
-          Investment Term
-        </label>
+        <Label
+          classes="labelText"
+          labelFor="investmentTerm"
+          labelText="Investment Term"
+        />
         <span className="userValue">{inputValues.investmentTerm}</span>
         <input
           className="rangeInput"
@@ -96,9 +103,11 @@ const TermDeposit = () => {
         />
       </p>
       <p>
-        <label className="labelText" htmlFor="interestPaid">
-          Interest Paid
-        </label>
+        <Label
+          classes="labelText"
+          labelFor="interestPaid"
+          labelText="Interest Paid"
+        />
         <span className="userValue"></span>
         <select
           className="enterValueField"
