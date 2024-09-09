@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { calculateTermDeposit, getMonths, getYears } from "../../helperFunctions";
 import Label from "../Label/Label";
+import Select from "../Select/Select";
 
 const TermDeposit = () => {
   const initialState = {
@@ -42,7 +43,6 @@ const TermDeposit = () => {
   };
 
   const showFinalAmountHandler = (e) => {
-    console.log('is THIS CALLED');
     const { startDepositAmount, interestRate } = inputValues;
     e.preventDefault();
     setFinalBalance(
@@ -110,22 +110,20 @@ const TermDeposit = () => {
           labelText="Interest Paid"
         />
         <span className="userValue"></span>
-        <select
-          className="enterValueField"
-          name="interestPaid"
+        <Select
+          classes="enterValueField"
           id="interestPaid"
-          onChange={inputChangeHandler}
+          onChangeHandler={inputChangeHandler}
           value={inputValues.interestPaid}
-        >
-          <option value="">None</option>
-          <option value="Monthly">Monthly</option>
-          <option value="Quarterly">Quarterly</option>
-          <option value="Annually">Annually</option>
-          <option value="At Maturity">At Maturity</option>
-        </select>
+        />
       </p>
-      <button type="submit" className="submitButton" onClick={showFinalAmountHandler}>Show Final Amount</button>
-
+      <button
+        type="submit"
+        className="submitButton"
+        onClick={showFinalAmountHandler}
+      >
+        Show Final Amount
+      </button>
 
       {finalBalance === 0 ? null : (
         <p className="finalStatement">
