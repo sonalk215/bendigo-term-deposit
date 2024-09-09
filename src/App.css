@@ -1,5 +1,5 @@
 .termDepositForm {
-  background-color: azure;
+  background-color: rgb(236, 239, 242);
   width: 95%;
   border: 2px solid gray;
   border-radius: 4px;
@@ -38,7 +38,7 @@ input[type=range] {
   border-radius: 3px;
   border: 1px solid;
   background: none;
-  box-shadow: 0px 0px 8px 0px #555, 0px 0px 25px 0px #555 inset;
+  box-shadow: 0px 0px 8px 0px #535252, 0px 0px 25px 0px #555 inset;
   transition: 0.8s all ease-out;
   outline: none;
 }
@@ -53,4 +53,34 @@ input[type=range]::-webkit-slider-thumb {
   box-shadow: 0px 0px 8px 0px #555, 0px 0px 25px 0px #555 inset;
   cursor: pointer;
   transition: 0.8s all ease-out;
+}
+
+/* CSS */
+.submitButton {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 8px .8em;
+  position: relative;
+}
+
+.submitButton:hover,
+.submitButton:focus {
+  background-color: #07c;
+}
+
+.submitButton:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.submitButton:active {
+  background-color: #0064bd;
+  box-shadow: none;
 }
