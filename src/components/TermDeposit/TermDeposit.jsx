@@ -63,6 +63,7 @@ const TermDeposit = () => {
           max="1500000"
           defaultValue="10000"
           onChange={inputChangeHandler}
+          onBlur={submitButtonHandler}
         />
       </p>
       <p>
@@ -77,6 +78,7 @@ const TermDeposit = () => {
           id="interestRate"
           type="number"
           onChange={inputChangeHandler}
+          onBlur={submitButtonHandler}
           step="0.10"
           min="0.00"
           value={inputValues.interestRate}
@@ -97,6 +99,7 @@ const TermDeposit = () => {
           max="60"
           defaultValue="0"
           onChange={investmentTermChangeHandler}
+          onBlur={submitButtonHandler}
         />
       </p>
       <p>
