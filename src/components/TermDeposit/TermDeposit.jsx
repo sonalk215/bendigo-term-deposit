@@ -42,6 +42,7 @@ const TermDeposit = () => {
   };
 
   const showFinalAmountHandler = (e) => {
+    console.log('is THIS CALLED');
     const { startDepositAmount, interestRate } = inputValues;
     e.preventDefault();
     setFinalBalance(
@@ -50,7 +51,7 @@ const TermDeposit = () => {
   };
 
   return (
-    <form className="termDepositForm" onSubmit={showFinalAmountHandler}>
+    <form className="termDepositForm" onSubmit={(e) => e.preventDefault()}>
       <p>
         <Label
           classes="labelText"
@@ -59,7 +60,7 @@ const TermDeposit = () => {
         />
         <span className="userValue">{inputValues.startDepositAmount}</span>
         <input
-          className="rangeInput"
+          className="rangeInput startDepositAmount"
           id="startDepositAmount"
           type="range"
           min="1000"
@@ -123,13 +124,8 @@ const TermDeposit = () => {
           <option value="At Maturity">At Maturity</option>
         </select>
       </p>
-      <div className="submitButtonDiv">
-        <input
-          type="submit"
-          value="Show Final Amount"
-          className="submitButton"
-        />
-      </div>
+      <button type="submit" className="submitButton" onClick={showFinalAmountHandler}>Show Final Amount</button>
+
 
       {finalBalance === 0 ? null : (
         <p className="finalStatement">

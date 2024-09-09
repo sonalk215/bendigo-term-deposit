@@ -23,16 +23,14 @@
   width: 40%;
 }
 
-.submitButtonDiv {
+.submitButton {
   margin-top: 9%;
-  text-align: center;
+  margin-left: 40%;
 }
 
 .finalStatement {
   text-align: center;
 }
-
-
 
 input[type=range] {
   width: 40%;
