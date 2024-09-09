@@ -21,13 +21,6 @@ const TermDeposit = () => {
     }));
   };
 
-  const startDepositAmountHandler = (e) => {
-    setInputValues((prevState) => ({
-      ...prevState,
-      startDepositAmount: e.target.value,
-    }));
-  };
-
   const investmentTermChangeHandler = (e) => {
     setTotalMonths(+e.target.value);
 
@@ -66,7 +59,7 @@ const TermDeposit = () => {
           min="1000"
           max="1500000"
           defaultValue="10000"
-          onChange={startDepositAmountHandler}
+          onChange={inputChangeHandler}
         />
       </p>
       <p>
