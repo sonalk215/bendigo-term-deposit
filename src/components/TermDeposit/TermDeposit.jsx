@@ -5,14 +5,14 @@ import Select from "../Select/Select";
 
 const TermDeposit = () => {
   const initialState = {
-    startDepositAmount: 0,
-    interestRate: 0.0,
-    investmentTerm: "",
+    startDepositAmount: '10000',
+    interestRate: 1.10,
+    investmentTerm: "3 years",
     interestPaid: "",
   };
   const [inputValues, setInputValues] = useState(initialState);
   const [finalBalance, setFinalBalance] = useState(0);
-  const [totalMonths, setTotalMonths] = useState(0);
+  const [totalMonths, setTotalMonths] = useState(36);
 
   const inputChangeHandler = (e) => {
     setInputValues((prevState) => ({
@@ -38,7 +38,7 @@ const TermDeposit = () => {
     }));
   };
 
-  const showFinalAmountHandler = (e) => {
+  const submitButtonHandler = (e) => {
     const { startDepositAmount, interestRate } = inputValues;
     e.preventDefault();
     setFinalBalance(
@@ -116,7 +116,7 @@ const TermDeposit = () => {
       <button
         type="submit"
         className="submitButton"
-        onClick={showFinalAmountHandler}
+        onClick={submitButtonHandler}
       >
         Show Final Amount
       </button>

@@ -1,4 +1,6 @@
 export const calculateTermDeposit = (amount, interest, time) => {
+  console.log(amount, interest, time);
+  console.log(time/12);
   const finalBalance =
     +amount + +((amount * interest) / 100) * (time / 12);
   return Math.round(finalBalance).toLocaleString();
