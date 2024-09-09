@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { calculateTermDeposit, getMonths, getYears } from "../../helperFunctions";
+import { calculateTermDeposit, getMonths, getYears, getComma } from "../../helperFunctions";
 import Label from "../Label/Label";
 import Select from "../Select/Select";
 
@@ -27,11 +27,14 @@ const TermDeposit = () => {
     const years = getYears(+e.target.value);
     const months = getMonths(+e.target.value);
 
+    const investmentTermString = `
+    ${years !== 0 ? years + " years" : ""}
+    ${getComma(years, months)} 
+    ${months !== 0 ? months + " months " : ""}`;
+
     setInputValues((prevState) => ({
       ...prevState,
-      investmentTerm: `${years !== 0 ? years + " years, " : ""} ${
-        months !== 0 ? months + " months " : ""
-      }`,
+      investmentTerm: investmentTermString,
     }));
   };
 
