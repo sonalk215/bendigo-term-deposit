@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { calculateTermDeposit, getMonths, getYears, getComma } from "../../helperFunctions";
+import {
+  calculateTermDeposit,
+  showInvestmentTerm,
+} from "../../helperFunctions";
 import Label from "../Label/Label";
 import Select from "../Select/Select";
 
@@ -7,7 +10,6 @@ const TermDeposit = () => {
   const initialState = {
     startDepositAmount: '10000',
     interestRate: 1.10,
-    investmentTerm: "3 years",
     interestPaid: "",
   };
   const [inputValues, setInputValues] = useState(initialState);
@@ -23,19 +25,6 @@ const TermDeposit = () => {
 
   const investmentTermChangeHandler = (e) => {
     setTotalMonths(+e.target.value);
-
-    const years = getYears(+e.target.value);
-    const months = getMonths(+e.target.value);
-
-    const investmentTermString = `
-    ${years !== 0 ? years + " years" : ""}
-    ${getComma(years, months)} 
-    ${months !== 0 ? months + " months " : ""}`;
-
-    setInputValues((prevState) => ({
-      ...prevState,
-      investmentTerm: investmentTermString,
-    }));
   };
 
   const submitButtonHandler = (e) => {
@@ -56,7 +45,9 @@ const TermDeposit = () => {
             labelFor="startDepositAmount"
             labelText="Start deposit Amount"
           />
-          <span className="userValue">{inputValues.startDepositAmount}</span>
+          <span className="userValue">
+           ${Number(inputValues.startDepositAmount).toLocaleString()}
+          </span>
           <input
             className="rangeInput startDepositAmount"
             id="startDepositAmount"
@@ -92,7 +83,8 @@ const TermDeposit = () => {
             labelFor="investmentTerm"
             labelText="Investment Term"
           />
-          <span className="userValue">{inputValues.investmentTerm}</span>
+          
+          <span className="userValue">{showInvestmentTerm(totalMonths)}</span>
           <input
             className="rangeInput"
             id="investmentTerm"

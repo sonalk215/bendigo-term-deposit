@@ -18,3 +18,15 @@ export const getComma = (years, month) => {
   const comma = years === 0 || month === 0 ? '' : ', ';
   return comma;
 }
+
+export const showInvestmentTerm = (value) => {
+  const years = getYears(+value);
+  const months = getMonths(+value);
+
+  const investmentTermString = `
+    ${years !== 0 ? years + " years" : ""}
+    ${getComma(years, months)} 
+    ${months !== 0 ? months + " months " : ""}`;
+
+  return investmentTermString;
+}
