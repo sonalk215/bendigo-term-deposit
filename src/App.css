@@ -1,8 +1,14 @@
-.termDepositForm {
-  background-color: rgb(236, 239, 242);
-  width: 95%;
-  border: 2px solid gray;
+.termDeposit {
+  border: 2px solid rgb(255, 253, 253);
   border-radius: 4px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: #f4f8fa;
+}
+.termDepositForm {
+  background-color: rgb(242, 242, 248);
+  width: 95%;
   margin: 1%;
   padding: 1%;
 }
