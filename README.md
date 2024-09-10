@@ -5,6 +5,7 @@ This project attempts to calculate Term Deposit. It expects
   1. starting amount
   2. interest rate
   3. investment term
+     
 as inputs
 
 ## **Tools Used**
