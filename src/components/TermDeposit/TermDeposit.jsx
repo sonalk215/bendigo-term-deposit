@@ -121,7 +121,7 @@ const TermDeposit = () => {
         {finalBalance === 0 ? null : (
           <p className="finalStatement">
             The final balance is $
-            <span className="finalBalance">{finalBalance}</span>
+            <span id="finalBalance" className="finalBalance">{finalBalance}</span>
           </p>
         )}
       </form>
